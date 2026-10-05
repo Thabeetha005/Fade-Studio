@@ -3,22 +3,30 @@
 
 <!-- ==================== PRELOADER ==================== -->
 <aside id="preloader" class="preloader" aria-label="Loading FADE STUDIO" role="dialog" aria-modal="true">
-  <div class="loader-container">
-    <div class="loader-image-frame">
-      <img
-        src="/assets/hero-portrait.png"
-        alt="FADE STUDIO Loading"
-        class="loader-image"
-      />
-      
-      <!-- Progress bar placed over/inside the loader image area -->
-      <div class="loader-progress-overlay">
-        <div class="loader-progress-track">
-          <div class="loader-progress-bar" id="preloaderProgressBar"></div>
-          <div class="loader-percentage-pin" id="preloaderCounterPin">
-            <span class="loader-percentage-val" id="preloaderCounter">0%</span>
+  <div class="preloader-panel" id="preloaderPanel">
+    <!-- Centerpiece Photo Canvas (Replaces the empty white background) -->
+    <div class="preloader-photo-area">
+      <img src="/assets/hero-portrait.png" alt="FADE STUDIO signature cut" class="preloader-photo-img">
+      <span class="preloader-issue-tag">EST. 2024 · BENGALURU</span>
+    </div>
+
+    <!-- White Background Loading Bar & Counter Section -->
+    <div class="preloader-loading-bar-wrap" id="preloaderLoadingWrap">
+      <!-- 0% to 100% Progress Line Track -->
+      <div class="preloader-progress-track" aria-hidden="true">
+        <div class="preloader-progress-line" id="preloaderProgressLine"></div>
+      </div>
+
+      <!-- Bottom Meta Row on White Background -->
+      <div class="preloader-panel-bottom">
+        <div class="preloader-brand">
+          <div class="brand-logo" style="font-size: clamp(20px, 4vw, 26px);">
+            <span class="logo-fade">FADE</span>
+            <span class="logo-studio">STUDIO</span>
           </div>
+          <span class="brand-sub">CUT CLEAN. LOOK SHARP.</span>
         </div>
+        <div class="preloader-counter" id="preloaderCounter" aria-live="polite">0%</div>
       </div>
     </div>
   </div>
