@@ -480,11 +480,6 @@ function initFadeStudio() {
             stagger: 0.1,
             ease: 'power3.out',
           }, '-=0.35')
-          .from('.hero-left-column', {
-            opacity: 0,
-            duration: 0.6,
-            ease: 'power2.out',
-          }, '-=0.4')
           .from('.hero-copy-group, .hero-cta-group', {
             y: 20,
             opacity: 0,

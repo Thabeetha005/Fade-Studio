@@ -749,9 +749,7 @@ a:hover {
 }
 
 .hero-layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+  display: block;
   margin-bottom: 40px;
 }
 
@@ -2671,30 +2669,10 @@ input[type="date"].form-input {
     display: none !important;
   }
 
-  /* Home Hero 210px + 1fr layout */
+  /* Home Hero layout */
   .hero-layout {
-    grid-template-columns: 210px 1fr;
-    gap: clamp(32px, 4vw, 64px);
+    display: block;
     margin-bottom: 60px;
-  }
-
-  .hero-left-column {
-    border-right: 1px solid var(--color-border);
-    border-bottom: none;
-    padding-right: 24px;
-    padding-bottom: 0;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  .vertical-links-list {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .hero-social-links {
-    margin-top: 60px;
   }
 
   .hero-editorial-gallery {
