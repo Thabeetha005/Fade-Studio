@@ -403,7 +403,33 @@ function initFadeStudio() {
   const preloaderCounter = document.getElementById('preloaderCounter');
   const preloaderProgressLine = document.getElementById('preloaderProgressLine');
 
+  // Track clicking the FADE STUDIO home buttons
+  const homeButtons = document.querySelectorAll('a[href="/"], .header-logo, .drawer-logo');
+  homeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      sessionStorage.setItem('fade_preloader_seen', 'true');
+    });
+  });
+
   if (preloader && preloaderPanel && preloaderCounter) {
+    // Detect if this page load is a browser refresh (reload)
+    const navEntries = performance.getEntriesByType('navigation');
+    const isPageReload = (navEntries.length > 0 && navEntries[0].type === 'reload') ||
+      (window.performance && window.performance.navigation && window.performance.navigation.type === 1);
+
+    const hasLoadedInSession = sessionStorage.getItem('fade_preloader_seen');
+
+    // Only load on refresh or first visit; skip every time user clicks the FADE STUDIO button
+    if (hasLoadedInSession && !isPageReload) {
+      preloader.style.display = 'none';
+      initGuardedScrollAnimations();
+      if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+      return;
+    }
+
+    // Mark as loaded for the session
+    sessionStorage.setItem('fade_preloader_seen', 'true');
+
     // Fast-track preloader duration on mobile (<= 2.2s total)
     const isSmallScreen = window.innerWidth < 768;
     const countDuration = isSmallScreen ? 1.0 : 1.5;

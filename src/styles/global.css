@@ -338,17 +338,15 @@ a:hover {
 .preloader-panel {
   position: relative;
   z-index: 2;
-  width: min(92vw, 860px);
-  height: min(85dvh, 620px);
+  width: min(94vw, 1120px);
+  height: min(84dvh, 660px);
   background-color: #000000;
-  color: var(--color-charcoal);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   transform: scale(0.96);
   opacity: 0;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.95);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.98);
 }
 
 /* Centerpiece photo canvas replacing the white background */
@@ -358,39 +356,21 @@ a:hover {
   flex: 1;
   min-height: 0;
   overflow: hidden;
-  background-color: #000000;
+  background-color: #121214;
 }
 
 .preloader-photo-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 68% 28%;
+  object-position: center 30%;
   display: block;
-  transform: scale(1.02);
-}
-
-.preloader-issue-tag {
-  position: absolute;
-  top: 16px;
-  right: 18px;
-  font-family: var(--font-sans);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  background: rgba(18, 18, 20, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 6px 14px;
-  border: 1px solid rgba(184, 155, 94, 0.45);
 }
 
 /* White background section where loading happens */
 .preloader-loading-bar-wrap {
   background-color: #FFFFFF;
-  color: #1A1A1C;
+  color: #121214;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -402,7 +382,7 @@ a:hover {
 .preloader-progress-track {
   width: 100%;
   height: 3px;
-  background-color: rgba(26, 26, 28, 0.1);
+  background-color: rgba(26, 26, 28, 0.08);
   position: relative;
   overflow: hidden;
 }
@@ -413,40 +393,34 @@ a:hover {
   left: 0;
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #1A1A1C 0%, #B89B5E 100%);
+  background-color: #121214;
 }
 
 .preloader-panel-bottom {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  padding: clamp(14px, 2.5vw, 24px) clamp(18px, 4vw, 36px);
-  gap: 16px;
+  padding: clamp(16px, 2.8vw, 28px) clamp(20px, 4vw, 44px);
   background-color: #FFFFFF;
 }
 
-.preloader-brand {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.brand-sub {
+.preloader-brand-title {
   font-family: var(--font-sans);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-grey-mid);
+  color: #121214;
+  margin-bottom: 6px;
 }
 
 .preloader-counter {
   font-family: var(--font-serif);
-  font-size: clamp(38px, 7vw, 72px);
+  font-size: clamp(52px, 10vw, 110px);
   line-height: 0.85;
   letter-spacing: -0.04em;
   font-weight: 400;
-  color: var(--color-charcoal);
+  color: #121214;
 }
 
 /* ==========================================================================
