@@ -1,0 +1,40 @@
+---
+export interface Props {
+  currentPage?: string;
+}
+
+const { currentPage = '' } = Astro.props;
+---
+
+<!-- ==================== HEADER ==================== -->
+<header class="site-header" id="siteHeader">
+  <div class="header-container">
+    <a href="/" class="brand-logo" aria-label="FADE STUDIO Homepage">
+      <span class="logo-fade">FADE</span>
+      <span class="logo-studio">STUDIO</span>
+    </a>
+
+    <nav class="header-nav" aria-label="Main Navigation">
+      <ul class="header-nav-list">
+        <li><a href="/services" class={currentPage === 'services' ? 'active' : ''}>Services</a></li>
+        <li><a href="/men" class={currentPage === 'men' ? 'active' : ''}>Men</a></li>
+        <li><a href="/women" class={currentPage === 'women' ? 'active' : ''}>Women</a></li>
+        <li><a href="/pricing" class={currentPage === 'pricing' ? 'active' : ''}>Pricing</a></li>
+        <li><a href="/gallery" class={currentPage === 'gallery' ? 'active' : ''}>Gallery</a></li>
+        <li><a href="/about" class={currentPage === 'about' ? 'active' : ''}>About</a></li>
+        <li><a href="/contact" class={currentPage === 'contact' ? 'active' : ''}>Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="/offers" class={`sign-in-link ${currentPage === 'offers' ? 'active' : ''}`} style="font-family: var(--font-sans); font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--color-gold);">Offers</a>
+      <a href="/book" class="btn btn-charcoal">Book Now</a>
+    </div>
+
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>

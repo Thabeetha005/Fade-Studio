@@ -1,0 +1,32 @@
+---
+export interface Props {
+  currentPage?: string;
+}
+
+const { currentPage = '' } = Astro.props;
+---
+
+<!-- Mobile Drawer Backdrop -->
+<div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+  <div class="mobile-drawer-header">
+    <span class="drawer-logo-text"><span class="logo-fade">FADE</span> STUDIO</span>
+    <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close Navigation Menu">&times;</button>
+  </div>
+  <ul class="mobile-nav-links">
+    <li><a href="/" class={currentPage === 'home' ? 'active' : ''}>Home</a></li>
+    <li><a href="/services" class={currentPage === 'services' ? 'active' : ''}>Services</a></li>
+    <li><a href="/men" class={currentPage === 'men' ? 'active' : ''}>Men's Grooming</a></li>
+    <li><a href="/women" class={currentPage === 'women' ? 'active' : ''}>Women's Styling</a></li>
+    <li><a href="/pricing" class={currentPage === 'pricing' ? 'active' : ''}>Pricing Table</a></li>
+    <li><a href="/gallery" class={currentPage === 'gallery' ? 'active' : ''}>Studio Gallery</a></li>
+    <li><a href="/about" class={currentPage === 'about' ? 'active' : ''}>Our Story</a></li>
+    <li><a href="/offers" class={currentPage === 'offers' ? 'active' : ''}>Special Offers</a></li>
+    <li><a href="/contact" class={currentPage === 'contact' ? 'active' : ''}>Contact & Hours</a></li>
+  </ul>
+  <div class="mobile-drawer-bottom">
+    <a href="/book" class="btn btn-charcoal" style="width:100%;">Book an Appointment</a>
+  </div>
+</div>

@@ -1,107 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>FADE STUDIO — Unisex Grooming & Hair Studio | Cut Clean. Look Sharp.</title>
-  <meta name="description" content="A modern grooming and hair studio for men and women. Precision skin fades, beard sculpting, hair treatments, and women's styling.">
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
 
-  <!-- Google Fonts: Instrument Serif & Urbanist -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-  <!-- ==================== PRELOADER ==================== -->
-  <aside id="preloader" class="preloader" aria-label="Loading FADE STUDIO" role="dialog" aria-modal="true">
-    <div class="preloader-bg-image" style="background-image: url('assets/hero-portrait.png');" aria-hidden="true"></div>
-    <div class="preloader-overlay" aria-hidden="true"></div>
-
-    <div class="preloader-panel" id="preloaderPanel">
-      <div class="preloader-panel-top">
-        <div class="preloader-thumbnail-frame">
-          <img src="assets/hero-portrait.png" alt="FADE STUDIO signature cut preview" class="preloader-thumb">
-        </div>
-        <span class="preloader-issue-tag">EST. 2024 · BENGALURU</span>
-      </div>
-
-      <div class="preloader-panel-bottom">
-        <div class="preloader-brand">
-          <div class="brand-logo" style="font-size: 32px;">
-            <span class="logo-fade">FADE</span>
-            <span class="logo-studio">STUDIO</span>
-          </div>
-          <span class="brand-sub">CUT CLEAN. LOOK SHARP.</span>
-        </div>
-        <div class="preloader-counter" id="preloaderCounter" aria-live="polite">0%</div>
-      </div>
-    </div>
-  </aside>
-
-  <!-- ==================== HEADER ==================== -->
-  <header class="site-header" id="siteHeader">
-    <div class="header-container">
-      <a href="index.html" class="brand-logo" aria-label="FADE STUDIO Homepage">
-        <span class="logo-fade">FADE</span>
-        <span class="logo-studio">STUDIO</span>
-      </a>
-
-      <nav class="header-nav" aria-label="Main Navigation">
-        <ul class="header-nav-list">
-          <li><a href="services.html">Services</a></li>
-          <li><a href="men.html">Men</a></li>
-          <li><a href="women.html">Women</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-        <a href="offers.html" class="sign-in-link" style="font-family: var(--font-sans); font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--color-gold);">Offers</a>
-        <a href="book.html" class="btn btn-charcoal">Book Now</a>
-      </div>
-
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    <!-- Mobile Drawer Backdrop -->
-    
-  </header>
-
-  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
-
-    <!-- Mobile Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
-      <div class="mobile-drawer-header">
-        <span class="drawer-logo-text"><span class="logo-fade">FADE</span> STUDIO</span>
-        <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close Navigation Menu">&times;</button>
-      </div>
-      <ul class="mobile-nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="men.html">Men's Grooming</a></li>
-        <li><a href="women.html">Women's Styling</a></li>
-        <li><a href="pricing.html">Pricing Table</a></li>
-        <li><a href="gallery.html">Studio Gallery</a></li>
-        <li><a href="about.html">Our Story</a></li>
-        <li><a href="offers.html">Special Offers</a></li>
-        <li><a href="contact.html">Contact & Hours</a></li>
-      </ul>
-      <div class="mobile-drawer-bottom">
-        <a href="book.html" class="btn btn-charcoal" style="width:100%;">Book an Appointment</a>
-      </div>
-    </div>
-
+<BaseLayout
+  title="FADE STUDIO — Unisex Grooming & Hair Studio | Cut Clean. Look Sharp."
+  description="A modern grooming and hair studio for men and women. Precision skin fades, beard sculpting, hair treatments, and women"
+  currentPage="home"
+  showPreloader={true}
+>
   <main id="mainContent">
+
     <!-- ==================== HERO SECTION ==================== -->
     <section class="hero-section" id="hero">
       <div class="hero-layout">
@@ -110,12 +18,12 @@
         <aside class="hero-left-column" aria-label="Quick Service Links">
           <nav class="vertical-links-nav" aria-label="Featured Categories">
             <ul class="vertical-links-list">
-              <li><a href="men.html">Haircuts & Fades</a></li>
-              <li><a href="men.html">Beard Sculpt</a></li>
-              <li><a href="women.html">Women's Styling</a></li>
-              <li><a href="services.html">Hair Spa & Scalp</a></li>
-              <li><a href="services.html">Skin & Facials</a></li>
-              <li><a href="pricing.html">Groom Packages</a></li>
+              <li><a href="/men">Haircuts & Fades</a></li>
+              <li><a href="/men">Beard Sculpt</a></li>
+              <li><a href="/women">Women's Styling</a></li>
+              <li><a href="/services">Hair Spa & Scalp</a></li>
+              <li><a href="/services">Skin & Facials</a></li>
+              <li><a href="/pricing">Groom Packages</a></li>
             </ul>
           </nav>
 
@@ -154,8 +62,8 @@
           </div>
 
           <div class="hero-cta-group">
-            <a href="book.html" class="btn btn-charcoal">Book an Appointment</a>
-            <a href="services.html" class="btn btn-outline">View Services</a>
+            <a href="/book" class="btn btn-charcoal">Book an Appointment</a>
+            <a href="/services" class="btn btn-outline">View Services</a>
           </div>
         </div>
 
@@ -165,7 +73,7 @@
       <div class="hero-editorial-gallery">
         <div class="hero-cover-wrapper parallax-container">
           <div class="cover-image-container">
-            <img src="assets/hero-portrait.png" alt="Signature modern styling and skin fade by FADE STUDIO" class="cover-photo parallax-image" data-speed="0.08">
+            <img src="/assets/hero-portrait.png" alt="Signature modern styling and skin fade by FADE STUDIO" class="cover-photo parallax-image" data-speed="0.08">
             <div class="cover-masthead-overlay" aria-hidden="true">
               <span class="cover-masthead-title">FADE STUDIO</span>
             </div>
@@ -178,21 +86,21 @@
         <div class="hero-narrow-trio">
           <div class="narrow-item item-1 parallax-container">
             <div class="narrow-image-wrapper">
-              <img src="assets/men-1.jpg" alt="The Precision Skin Fade" class="narrow-photo parallax-image" data-speed="0.12">
+              <img src="/assets/men-1.jpg" alt="The Precision Skin Fade" class="narrow-photo parallax-image" data-speed="0.12">
             </div>
             <span class="narrow-caption">01 &mdash; Skin Fade Archive</span>
           </div>
 
           <div class="narrow-item item-2 parallax-container">
             <div class="narrow-image-wrapper">
-              <img src="assets/image-4.jpg" alt="Modern women's styling with sunglasses" class="narrow-photo parallax-image" data-speed="0.06">
+              <img src="/assets/image-4.jpg" alt="Modern women's styling with sunglasses" class="narrow-photo parallax-image" data-speed="0.06">
             </div>
             <span class="narrow-caption">02 &mdash; Women's Studio</span>
           </div>
 
           <div class="narrow-item item-3 parallax-container">
             <div class="narrow-image-wrapper">
-              <img src="assets/men-3.jpg" alt="Beard Sculpt & Lineup" class="narrow-photo parallax-image" data-speed="0.14">
+              <img src="/assets/men-3.jpg" alt="Beard Sculpt & Lineup" class="narrow-photo parallax-image" data-speed="0.14">
             </div>
             <span class="narrow-caption">03 &mdash; Beard Architecture</span>
           </div>
@@ -229,7 +137,7 @@
             </div>
           </div>
           <div class="editorial-cta">
-            <a href="services.html" class="btn btn-outline">View All Services</a>
+            <a href="/services" class="btn btn-outline">View All Services</a>
           </div>
         </div>
 
@@ -238,13 +146,13 @@
             <!-- Card 1 -->
             <article class="featured-card">
               <div class="card-image-box">
-                <img src="assets/men-1.jpg" alt="The Precision Fade at FADE STUDIO" class="card-img">
+                <img src="/assets/men-1.jpg" alt="The Precision Fade at FADE STUDIO" class="card-img">
                 <div class="card-scrim" aria-hidden="true"></div>
                 <div class="card-text-overlay">
                   <span class="card-index">SERVICE 01 · ₹400</span>
                   <h3 class="card-title">The Precision Fade</h3>
                   <p class="card-desc">Clean skin fades, taper fades and razor-sharp line finishes tailored to skull contours.</p>
-                  <a href="book.html?service=Skin+Fade" class="card-read-hint">BOOK SERVICE &rarr;</a>
+                  <a href="/book?service=Skin+Fade" class="card-read-hint">BOOK SERVICE &rarr;</a>
                 </div>
               </div>
             </article>
@@ -252,13 +160,13 @@
             <!-- Card 2 -->
             <article class="featured-card">
               <div class="card-image-box">
-                <img src="assets/men-5.jpg" alt="Beard and Hot Towel Shave" class="card-img">
+                <img src="/assets/men-5.jpg" alt="Beard and Hot Towel Shave" class="card-img">
                 <div class="card-scrim" aria-hidden="true"></div>
                 <div class="card-text-overlay">
                   <span class="card-index">SERVICE 02 · ₹350</span>
                   <h3 class="card-title">Beard & Hot Towel Shave</h3>
                   <p class="card-desc">Shaping, trimming, essential oil hot towel compress, and a calm, close straight-edge shave.</p>
-                  <a href="book.html?service=Hot+Towel+Shave" class="card-read-hint">BOOK SERVICE &rarr;</a>
+                  <a href="/book?service=Hot+Towel+Shave" class="card-read-hint">BOOK SERVICE &rarr;</a>
                 </div>
               </div>
             </article>
@@ -266,13 +174,13 @@
             <!-- Card 3 -->
             <article class="featured-card">
               <div class="card-image-box">
-                <img src="assets/image-6.jpg" alt="Colour and Gloss Hair Studio" class="card-img">
+                <img src="/assets/image-6.jpg" alt="Colour and Gloss Hair Studio" class="card-img">
                 <div class="card-scrim" aria-hidden="true"></div>
                 <div class="card-text-overlay">
                   <span class="card-index">SERVICE 03 · ₹1200</span>
                   <h3 class="card-title">Colour & Gloss</h3>
                   <p class="card-desc">Natural ammonia-free colour, grey blending, tonal highlights, and shine revitalizing gloss.</p>
-                  <a href="book.html?service=Global+Colour" class="card-read-hint">BOOK SERVICE &rarr;</a>
+                  <a href="/book?service=Global+Colour" class="card-read-hint">BOOK SERVICE &rarr;</a>
                 </div>
               </div>
             </article>
@@ -280,13 +188,13 @@
             <!-- Card 4 -->
             <article class="featured-card">
               <div class="card-image-box">
-                <img src="assets/men-6.jpg" alt="Hair Spa and Scalp Care" class="card-img">
+                <img src="/assets/men-6.jpg" alt="Hair Spa and Scalp Care" class="card-img">
                 <div class="card-scrim" aria-hidden="true"></div>
                 <div class="card-text-overlay">
                   <span class="card-index">SERVICE 04 · ₹800</span>
                   <h3 class="card-title">Hair Spa & Scalp Care</h3>
                   <p class="card-desc">Deep detox for dandruff, dryness, scalp stimulation, and thermal micro-mist infusion.</p>
-                  <a href="book.html?service=Hair+Spa" class="card-read-hint">BOOK SERVICE &rarr;</a>
+                  <a href="/book?service=Hair+Spa" class="card-read-hint">BOOK SERVICE &rarr;</a>
                 </div>
               </div>
             </article>
@@ -320,18 +228,18 @@
           </div>
 
           <div style="margin-top: 36px;">
-            <a href="about.html" class="btn btn-outline">Read Our Story</a>
+            <a href="/about" class="btn btn-outline">Read Our Story</a>
           </div>
         </div>
 
         <div class="statement-right">
           <div class="statement-photo-duo">
             <div class="statement-photo-item photo-high parallax-container">
-              <img src="assets/image-9.jpg" alt="Relaxed client styling at FADE STUDIO" class="statement-img parallax-image" data-speed="0.08">
+              <img src="/assets/image-9.jpg" alt="Relaxed client styling at FADE STUDIO" class="statement-img parallax-image" data-speed="0.08">
               <span class="photo-subtext">FIGURE I &mdash; THE CALM CONSULTATION</span>
             </div>
             <div class="statement-photo-item photo-low parallax-container">
-              <img src="assets/image-10.jpg" alt="Tailored hair finish at FADE STUDIO" class="statement-img parallax-image" data-speed="0.14">
+              <img src="/assets/image-10.jpg" alt="Tailored hair finish at FADE STUDIO" class="statement-img parallax-image" data-speed="0.14">
               <span class="photo-subtext">FIGURE II &mdash; SHARP SILHOUETTE</span>
             </div>
           </div>
@@ -354,7 +262,7 @@
         <!-- Moment 1: Everyday Sharp -->
         <article class="moment-column moment-col-1">
           <div class="moment-image-wrapper">
-            <img src="assets/men-4.jpg" alt="Everyday Sharp styling for work and weekends" class="moment-photo">
+            <img src="/assets/men-4.jpg" alt="Everyday Sharp styling for work and weekends" class="moment-photo">
             <div class="moment-overlay-title">
               <h3 class="moment-title">Everyday Sharp</h3>
             </div>
@@ -362,13 +270,13 @@
           <p class="moment-desc">
             Quick, clean styling, neckline cleans, and beard maintenance for workdays and effortless weekends.
           </p>
-          <a href="men.html" class="btn btn-outline" style="align-self: flex-start; margin-top: 4px;">Men's Grooming</a>
+          <a href="/men" class="btn btn-outline" style="align-self: flex-start; margin-top: 4px;">Men's Grooming</a>
         </article>
 
         <!-- Moment 2: Groom Ready -->
         <article class="moment-column moment-col-2">
           <div class="moment-image-wrapper">
-            <img src="assets/men-2.jpg" alt="Groom Ready wedding grooming packages" class="moment-photo">
+            <img src="/assets/men-2.jpg" alt="Groom Ready wedding grooming packages" class="moment-photo">
             <div class="moment-overlay-title">
               <h3 class="moment-title">Groom Ready</h3>
             </div>
@@ -376,13 +284,13 @@
           <p class="moment-desc">
             Full wedding grooming packages including facial de-tan, haircut, beard ritual, and thermal scalp therapy.
           </p>
-          <a href="pricing.html#packages" class="btn btn-outline" style="align-self: flex-start; margin-top: 4px;">Groom Packages</a>
+          <a href="/pricing#packages" class="btn btn-outline" style="align-self: flex-start; margin-top: 4px;">Groom Packages</a>
         </article>
 
         <!-- Moment 3: Women & Bridal -->
         <article class="moment-column moment-col-3">
           <div class="moment-image-wrapper">
-            <img src="assets/image-7.jpg" alt="Women and Bridal hair and makeup services" class="moment-photo">
+            <img src="/assets/image-7.jpg" alt="Women and Bridal hair and makeup services" class="moment-photo">
             <div class="moment-overlay-title">
               <h3 class="moment-title">Women & Bridal</h3>
             </div>
@@ -390,7 +298,7 @@
           <p class="moment-desc">
             Designer cuts, multidimensional colour, bouncy blow-dries, and timeless bridal hair & makeup.
           </p>
-          <a href="women.html" class="btn btn-outline" style="align-self: flex-start; margin-top: 4px;">Women's Salon</a>
+          <a href="/women" class="btn btn-outline" style="align-self: flex-start; margin-top: 4px;">Women's Salon</a>
         </article>
       </div>
 
@@ -415,7 +323,7 @@
             <p>We blend classic scissor-over-comb discipline with progressive barbering techniques to deliver consistent precision every visit.</p>
           </div>
           <div class="team-cta">
-            <a href="about.html" class="btn btn-outline">Explore Full Story & Team</a>
+            <a href="/about" class="btn btn-outline">Explore Full Story & Team</a>
           </div>
         </div>
 
@@ -424,40 +332,40 @@
           <!-- Member 1 -->
           <article class="team-member-item">
             <div class="team-thumb-box">
-              <img src="assets/team-1.jpg" alt="Vikram Malhotra - Master Barber" class="team-thumb">
+              <img src="/assets/team-1.jpg" alt="Vikram Malhotra - Master Barber" class="team-thumb">
             </div>
             <div class="team-info">
               <span class="team-meta">FOUNDER · 12 YEARS EXPERIENCE</span>
               <h3 class="team-name">Vikram Malhotra</h3>
               <p class="team-bio">Specialist in anatomical head mapping, zero skin fades, and traditional straight razor shaves.</p>
             </div>
-            <a href="about.html#team" class="btn btn-charcoal">Profile</a>
+            <a href="/about#team" class="btn btn-charcoal">Profile</a>
           </article>
 
           <!-- Member 2 -->
           <article class="team-member-item">
             <div class="team-thumb-box">
-              <img src="assets/team-2.jpg" alt="Arjun Nair - Senior Fade Specialist" class="team-thumb">
+              <img src="/assets/team-2.jpg" alt="Arjun Nair - Senior Fade Specialist" class="team-thumb">
             </div>
             <div class="team-info">
               <span class="team-meta">SENIOR BARBER · 08 YEARS EXPERIENCE</span>
               <h3 class="team-name">Arjun Nair</h3>
               <p class="team-bio">Master of tapers, beard sculpture, line-ups, and contemporary textured crops.</p>
             </div>
-            <a href="about.html#team" class="btn btn-charcoal">Profile</a>
+            <a href="/about#team" class="btn btn-charcoal">Profile</a>
           </article>
 
           <!-- Member 3 -->
           <article class="team-member-item">
             <div class="team-thumb-box">
-              <img src="assets/team-3.jpg" alt="Priya Sharma - Creative Director" class="team-thumb">
+              <img src="/assets/team-3.jpg" alt="Priya Sharma - Creative Director" class="team-thumb">
             </div>
             <div class="team-info">
               <span class="team-meta">CREATIVE DIRECTOR · 10 YEARS EXPERIENCE</span>
               <h3 class="team-name">Priya Sharma</h3>
               <p class="team-bio">Specializing in women's precision bobs, soft layers, balayage, and luxury bridal styling.</p>
             </div>
-            <a href="about.html#team" class="btn btn-charcoal">Profile</a>
+            <a href="/about#team" class="btn btn-charcoal">Profile</a>
           </article>
         </div>
       </div>
@@ -465,7 +373,7 @@
 
     <!-- ==================== OFFER BANNER ==================== -->
     <section class="offer-banner-section" id="offer">
-      <div class="offer-hero-banner" style="background-image: url('assets/image-17.jpg');">
+      <div class="offer-hero-banner" style="background-image: url('/assets/image-17.jpg');">
         <div class="offer-scrim" aria-hidden="true"></div>
 
         <div class="offer-inner-content">
@@ -497,100 +405,4 @@
       </div>
     </section>
   </main>
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="site-footer" id="siteFooter">
-    <div class="footer-container">
-      <div class="footer-links-grid">
-        <div class="footer-col">
-          <span class="footer-col-header">SERVICES & MENU</span>
-          <ul class="footer-links-list">
-            <li><a href="services.html">All Services</a></li>
-            <li><a href="men.html">Men's Grooming</a></li>
-            <li><a href="women.html">Women's Hair & Beauty</a></li>
-            <li><a href="pricing.html">Full Pricing Table</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <span class="footer-col-header">EXPLORE</span>
-          <ul class="footer-links-list">
-            <li><a href="gallery.html">Studio Gallery</a></li>
-            <li><a href="about.html">About & Team</a></li>
-            <li><a href="offers.html">Seasonal Offers</a></li>
-            <li><a href="book.html">Book Appointment</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <span class="footer-col-header">OPENING HOURS</span>
-          <ul class="footer-links-list">
-            <li style="color:#D5D2CB; font-size:12px;">Monday &ndash; Sunday</li>
-            <li style="color:var(--color-gold); font-size:14px; font-weight:700;">10:00 AM &ndash; 9:00 PM</li>
-            <li style="color:#8C8C92; font-size:11px; margin-top:8px;">Walk-ins welcome based on stylist availability. Prior booking recommended.</li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <span class="footer-col-header">STUDIO LOCATION</span>
-          <p class="footer-about-text" style="color:#D5D2CB; margin-bottom:8px;">
-            14th Main Road, Indiranagar, 100 Feet Rd Junction, Bengaluru, Karnataka 560038
-          </p>
-          <p style="color:#D5D2CB; font-size:12px; font-style:normal;">
-            Phone: <a href="tel:+919876543210" style="color:var(--color-gold);">+91 98765 43210</a><br>
-            Email: <a href="mailto:concierge@fadestudio.in" style="color:var(--color-gold);">concierge@fadestudio.in</a>
-          </p>
-        </div>
-      </div>
-
-      <div class="footer-divider" aria-hidden="true"></div>
-
-      <div class="footer-secondary-row">
-        <ul class="footer-legal-list">
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Use</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="book.html">Online Booking</a></li>
-        </ul>
-
-        <div class="footer-social-row">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <span style="color:var(--color-grey-mid);">/</span>
-          <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a>
-        </div>
-      </div>
-
-      <div class="footer-copyright-row">
-        <p class="footer-copyright-text">
-          &copy; FADE STUDIO. Cut clean. Look sharp. All rights reserved. Precision unisex salon specializing in master barbering and contemporary hair styling.
-        </p>
-      </div>
-
-      <div class="footer-giant-logo-wrap" aria-hidden="true">
-        <span class="footer-giant-logo">
-          <span class="logo-fade">FADE</span>
-          <span class="logo-studio">STUDIO</span>
-        </span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Universal Modal Popup -->
-  <div class="modal-backdrop" id="generalModal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-card">
-      <span class="modal-kicker">STUDIO PRIVILEGE</span>
-      <h3 class="modal-title" id="modalTitle">Welcome to <span class="italic-serif">FADE STUDIO</span></h3>
-      <div class="modal-message" id="modalMessage">
-        <p>Your 15% offer is on its way to your inbox.</p>
-      </div>
-      <button class="btn btn-charcoal modal-close-btn" id="modalCloseBtn">Close</button>
-    </div>
-  </div>
-
-  <!-- CDN Dependencies -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+</BaseLayout>

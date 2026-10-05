@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Special Offers & Packages — FADE STUDIO | Bengaluru"
+  description="Discover limited-time grooming offers at FADE STUDIO: 15% off your first visit, all-inclusive Groom Packages, and weekday 10% off specials."
+  currentPage="offers"
+  showPreloader={false}
+>
+  <main id="mainContent">
+
+    <!-- ==================== HERO ==================== -->
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <span class="page-kicker">STUDIO PRIVILEGES</span>
+        <h1 class="page-hero-title">
+          Curated seasonal <span class="italic-serif">offers.</span>
+        </h1>
+        <p class="page-hero-desc">
+          Experience our master barbering and hair therapies with exclusive seasonal bundles designed for newcomers, grooms, and weekday regulars.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 1: 3 OFFERS CARDS ==================== -->
+    <section class="content-section" id="offers-list">
+      <div class="section-header-block">
+        <span class="section-kicker">FEATURED BUNDLES</span>
+        <h2 class="section-title">Select your <span class="italic-serif">privilege.</span></h2>
+        <p class="section-desc">Click any offer below to auto-apply the voucher code directly into our booking engine.</p>
+      </div>
+
+      <div class="offers-grid">
+        <!-- Offer 1 -->
+        <article class="offer-card">
+          <span class="offer-badge">FIRST VISIT</span>
+          <div>
+            <h3 class="offer-card-title">15% Off First Visit</h3>
+            <p class="offer-card-price">15% Discount on Any Service</p>
+            <p style="font-size:12px; font-style:italic; color:#555; margin-bottom:20px; line-height:1.5;">
+              Our warm welcome to new guests. Valid on all haircut, skin fade, beard sculpting, and hair spa services.
+            </p>
+            <ul class="offer-perks">
+              <li>Applicable on both Men's and Women's menus</li>
+              <li>Includes full wash, conditioning, and finish styling</li>
+              <li>No minimum bill amount required</li>
+              <li>Valid all 7 days of the week</li>
+            </ul>
+          </div>
+          <a href="/book?offer=First-Visit+15%25+Off" class="btn btn-charcoal" style="width:100%;">Book This Offer</a>
+        </article>
+
+        <!-- Offer 2 -->
+        <article class="offer-card" style="border: 2px solid var(--color-gold);">
+          <span class="offer-badge" style="background:var(--color-charcoal); color:var(--color-gold);">BEST VALUE</span>
+          <div>
+            <h3 class="offer-card-title">The Groom Package</h3>
+            <p class="offer-card-price">₹3500 <span style="font-size:16px; color:#888; text-decoration:line-through; font-family:var(--font-sans);">₹4700</span></p>
+            <p style="font-size:12px; font-style:italic; color:#555; margin-bottom:20px; line-height:1.5;">
+              The ultimate pre-wedding ritual. Designed to make the groom look impeccably sharp, relaxed, and photograph-ready.
+            </p>
+            <ul class="offer-perks">
+              <li>Master Haircut & Razor Skin Fade</li>
+              <li>Beard Architecture or Hot Towel Shave</li>
+              <li>Deep Hydrating Glow Facial & Eye Revival</li>
+              <li>Thermal Scalp Treatment & Botanical Hair Spa</li>
+            </ul>
+          </div>
+          <a href="/book?offer=Groom+Package" class="btn btn-gold" style="width:100%;">Book This Offer</a>
+        </article>
+
+        <!-- Offer 3 -->
+        <article class="offer-card">
+          <span class="offer-badge">WEEKDAY REFRESH</span>
+          <div>
+            <h3 class="offer-card-title">Weekday Special</h3>
+            <p class="offer-card-price">10% Off Mon &ndash; Thu</p>
+            <p style="font-size:12px; font-style:italic; color:#555; margin-bottom:20px; line-height:1.5;">
+              Avoid the weekend crowd and enjoy unhurried chair time between 11:00 AM and 4:00 PM, Monday through Thursday.
+            </p>
+            <ul class="offer-perks">
+              <li>Valid on all services above ₹400</li>
+              <li>Complimentary specialty coffee or iced tonic</li>
+              <li>Priority stylist assignment</li>
+              <li>Perfect for mid-week corporate upkeep</li>
+            </ul>
+          </div>
+          <a href="/book?offer=Weekday+Special" class="btn btn-charcoal" style="width:100%;">Book This Offer</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 2: CLAIM 15% DIGITAL VOUCHER ==================== -->
+    <section class="offer-banner-section" id="claim-voucher">
+      <div class="offer-hero-banner" style="background-image: url('/assets/image-1.jpg');">
+        <div class="offer-scrim" aria-hidden="true"></div>
+
+        <div class="offer-inner-content">
+          <div class="offer-top">
+            <span class="offer-kicker">DIRECT PRIVILEGE</span>
+            <h2 class="offer-heading">
+              Claim 15% off your <span class="italic-serif">first appointment.</span>
+            </h2>
+          </div>
+
+          <div class="offer-bottom">
+            <div class="offer-text-col">
+              <p class="offer-copy">
+                Enter your email address to receive your unique 15% voucher code instantly. Valid for 30 days from registration across all chairs.
+              </p>
+            </div>
+
+            <div class="offer-form-col">
+              <form class="fade-offer-form" id="offersPageForm">
+                <div class="offer-input-group">
+                  <label for="offersEmail" class="sr-only">Your email address</label>
+                  <input type="email" id="offersEmail" placeholder="Enter your email address" required class="offer-input">
+                  <button type="submit" class="btn btn-gold">Claim Offer</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 3: TERMS OF OFFERS ==================== -->
+    <section class="content-section" id="offer-terms">
+      <div class="section-header-block">
+        <span class="section-kicker">OFFER DETAILS</span>
+        <h2 class="section-title">Terms & <span class="italic-serif">Conditions.</span></h2>
+      </div>
+
+      <div class="service-groups-grid">
+        <div class="service-category-card">
+          <h3 style="font-family:var(--font-serif); font-size:24px; margin-bottom:8px;">Offer Combining</h3>
+          <p class="p-normal" style="font-size:12.5px; line-height:1.6;">
+            Special discounts cannot be combined with existing package prices or multi-visit concessions unless explicitly noted. Only one voucher may be redeemed per booking.
+          </p>
+        </div>
+
+        <div class="service-category-card">
+          <h3 style="font-family:var(--font-serif); font-size:24px; margin-bottom:8px;">Validity & Redemption</h3>
+          <p class="p-normal" style="font-size:12.5px; line-height:1.6;">
+            Simply present the confirmation SMS or voucher code to our front desk upon settling your bill after your session. Cash, card, and UPI accepted.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CALL TO ACTION STRIP ==================== -->
+    <section class="booking-cta-strip">
+      <div class="cta-left">
+        <span class="cta-kicker">EXCLUSIVE CHAIRS</span>
+        <h2 class="cta-heading">Ready to claim your <span class="italic-serif">look?</span></h2>
+        <p class="cta-desc">Choose any of the offers above or schedule a standard consultation session.</p>
+      </div>
+      <div>
+        <a href="/book" class="btn btn-gold">Book with Offer</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

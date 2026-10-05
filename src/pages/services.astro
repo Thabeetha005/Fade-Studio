@@ -1,81 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Services Menu — FADE STUDIO | Unisex Grooming & Hair Studio</title>
-  <meta name="description" content="Explore FADE STUDIO's complete service menu: precision fades, beard sculpting, hot towel shaves, hair spas, facials, and women's styling.">
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-  <!-- ==================== HEADER ==================== -->
-  <header class="site-header" id="siteHeader">
-    <div class="header-container">
-      <a href="index.html" class="brand-logo" aria-label="FADE STUDIO Homepage">
-        <span class="logo-fade">FADE</span>
-        <span class="logo-studio">STUDIO</span>
-      </a>
-
-      <nav class="header-nav" aria-label="Main Navigation">
-        <ul class="header-nav-list">
-          <li><a href="services.html" class="active">Services</a></li>
-          <li><a href="men.html">Men</a></li>
-          <li><a href="women.html">Women</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-        <a href="offers.html" class="sign-in-link" style="font-family: var(--font-sans); font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--color-gold);">Offers</a>
-        <a href="book.html" class="btn btn-charcoal">Book Now</a>
-      </div>
-
-      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    <!-- Mobile Drawer Backdrop -->
-    
-  </header>
-
-  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
-
-    <!-- Mobile Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
-      <div class="mobile-drawer-header">
-        <span class="drawer-logo-text"><span class="logo-fade">FADE</span> STUDIO</span>
-        <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close Navigation Menu">&times;</button>
-      </div>
-      <ul class="mobile-nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="men.html">Men's Grooming</a></li>
-        <li><a href="women.html">Women's Styling</a></li>
-        <li><a href="pricing.html">Pricing Table</a></li>
-        <li><a href="gallery.html">Studio Gallery</a></li>
-        <li><a href="about.html">Our Story</a></li>
-        <li><a href="offers.html">Special Offers</a></li>
-        <li><a href="contact.html">Contact & Hours</a></li>
-      </ul>
-      <div class="mobile-drawer-bottom">
-        <a href="book.html" class="btn btn-charcoal" style="width:100%;">Book an Appointment</a>
-      </div>
-    </div>
-
+<BaseLayout
+  title="Services Menu — FADE STUDIO | Unisex Grooming & Hair Studio"
+  description="Explore FADE STUDIO"
+  currentPage="services"
+  showPreloader={false}
+>
   <main id="mainContent">
+
     <!-- ==================== PAGE HERO ==================== -->
     <section class="page-hero">
       <div class="page-hero-inner">
@@ -87,8 +21,8 @@
           Every service is performed with surgical attention to detail, premium botanical formulations, and custom consultation to ensure your style looks natural and stays sharp.
         </p>
         <div class="page-hero-cta">
-          <a href="book.html" class="btn btn-charcoal">Book an Appointment</a>
-          <a href="pricing.html" class="btn btn-outline">View Full Price List</a>
+          <a href="/book" class="btn btn-charcoal">Book an Appointment</a>
+          <a href="/pricing" class="btn btn-outline">View Full Price List</a>
         </div>
       </div>
     </section>
@@ -133,7 +67,7 @@
             </ul>
           </div>
           <div class="service-card-action">
-            <a href="book.html?service=Skin+Fade" class="btn btn-charcoal" style="width: 100%;">Book a Haircut</a>
+            <a href="/book?service=Skin+Fade" class="btn btn-charcoal" style="width: 100%;">Book a Haircut</a>
           </div>
         </div>
 
@@ -168,7 +102,7 @@
             </ul>
           </div>
           <div class="service-card-action">
-            <a href="book.html?service=Hot+Towel+Shave" class="btn btn-charcoal" style="width: 100%;">Book Beard Care</a>
+            <a href="/book?service=Hot+Towel+Shave" class="btn btn-charcoal" style="width: 100%;">Book Beard Care</a>
           </div>
         </div>
       </div>
@@ -209,7 +143,7 @@
             </ul>
           </div>
           <div class="service-card-action">
-            <a href="book.html?service=Global+Colour" class="btn btn-gold" style="width: 100%;">Book Colour</a>
+            <a href="/book?service=Global+Colour" class="btn btn-gold" style="width: 100%;">Book Colour</a>
           </div>
         </div>
 
@@ -239,7 +173,7 @@
             </ul>
           </div>
           <div class="service-card-action">
-            <a href="book.html?service=Hair+Spa" class="btn btn-gold" style="width: 100%;">Book Hair Spa</a>
+            <a href="/book?service=Hair+Spa" class="btn btn-gold" style="width: 100%;">Book Hair Spa</a>
           </div>
         </div>
       </div>
@@ -280,7 +214,7 @@
             </ul>
           </div>
           <div class="service-card-action">
-            <a href="book.html?service=Glow+Facial" class="btn btn-charcoal" style="width: 100%;">Book Facial</a>
+            <a href="/book?service=Glow+Facial" class="btn btn-charcoal" style="width: 100%;">Book Facial</a>
           </div>
         </div>
 
@@ -314,7 +248,7 @@
             </ul>
           </div>
           <div class="service-card-action">
-            <a href="women.html" class="btn btn-outline" style="width: 100%;">View Women's Details</a>
+            <a href="/women" class="btn btn-outline" style="width: 100%;">View Women's Details</a>
           </div>
         </div>
       </div>
@@ -328,103 +262,8 @@
         <p class="cta-desc">Choose your artist, your service, and your preferred hour online. We look forward to welcoming you.</p>
       </div>
       <div>
-        <a href="book.html" class="btn btn-gold">Book Your Session</a>
+        <a href="/book" class="btn btn-gold">Book Your Session</a>
       </div>
     </section>
   </main>
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="site-footer" id="siteFooter">
-    <div class="footer-container">
-      <div class="footer-links-grid">
-        <div class="footer-col">
-          <span class="footer-col-header">SERVICES & MENU</span>
-          <ul class="footer-links-list">
-            <li><a href="services.html">All Services</a></li>
-            <li><a href="men.html">Men's Grooming</a></li>
-            <li><a href="women.html">Women's Hair & Beauty</a></li>
-            <li><a href="pricing.html">Full Pricing Table</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <span class="footer-col-header">EXPLORE</span>
-          <ul class="footer-links-list">
-            <li><a href="gallery.html">Studio Gallery</a></li>
-            <li><a href="about.html">About & Team</a></li>
-            <li><a href="offers.html">Seasonal Offers</a></li>
-            <li><a href="book.html">Book Appointment</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <span class="footer-col-header">OPENING HOURS</span>
-          <ul class="footer-links-list">
-            <li style="color:#D5D2CB; font-size:12px;">Monday &ndash; Sunday</li>
-            <li style="color:var(--color-gold); font-size:14px; font-weight:700;">10:00 AM &ndash; 9:00 PM</li>
-            <li style="color:#8C8C92; font-size:11px; margin-top:8px;">Walk-ins welcome based on stylist availability. Prior booking recommended.</li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <span class="footer-col-header">STUDIO LOCATION</span>
-          <p class="footer-about-text" style="color:#D5D2CB; margin-bottom:8px;">
-            14th Main Road, Indiranagar, 100 Feet Rd Junction, Bengaluru, Karnataka 560038
-          </p>
-          <p style="color:#D5D2CB; font-size:12px; font-style:normal;">
-            Phone: <a href="tel:+919876543210" style="color:var(--color-gold);">+91 98765 43210</a><br>
-            Email: <a href="mailto:concierge@fadestudio.in" style="color:var(--color-gold);">concierge@fadestudio.in</a>
-          </p>
-        </div>
-      </div>
-
-      <div class="footer-divider" aria-hidden="true"></div>
-
-      <div class="footer-secondary-row">
-        <ul class="footer-legal-list">
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Use</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="book.html">Online Booking</a></li>
-        </ul>
-
-        <div class="footer-social-row">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <span style="color:var(--color-grey-mid);">/</span>
-          <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a>
-        </div>
-      </div>
-
-      <div class="footer-copyright-row">
-        <p class="footer-copyright-text">
-          &copy; FADE STUDIO. Cut clean. Look sharp. All rights reserved. Precision unisex salon specializing in master barbering and contemporary hair styling.
-        </p>
-      </div>
-
-      <div class="footer-giant-logo-wrap" aria-hidden="true">
-        <span class="footer-giant-logo">
-          <span class="logo-fade">FADE</span>
-          <span class="logo-studio">STUDIO</span>
-        </span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Universal Modal Popup -->
-  <div class="modal-backdrop" id="generalModal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-card">
-      <span class="modal-kicker">STUDIO PRIVILEGE</span>
-      <h3 class="modal-title" id="modalTitle">Welcome to <span class="italic-serif">FADE STUDIO</span></h3>
-      <div class="modal-message" id="modalMessage">
-        <p>Your appointment or inquiry has been processed.</p>
-      </div>
-      <button class="btn btn-charcoal modal-close-btn" id="modalCloseBtn">Close</button>
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+</BaseLayout>

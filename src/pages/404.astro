@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="404 — Page Not Found | FADE STUDIO"
+  description="The page you are looking for has been moved or does not exist. Return to FADE STUDIO home or explore our grooming services."
+  currentPage="404"
+  showPreloader={false}
+>
+  <main id="mainContent">
+
+    <!-- ==================== HERO ==================== -->
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <span class="page-kicker">ERROR 404</span>
+        <h1 class="page-hero-title">
+          This look is <span class="italic-serif">out of frame.</span>
+        </h1>
+        <p class="page-hero-desc">
+          The link you followed may have been updated or moved. Let's get you back to the main studio chairs.
+        </p>
+        <div class="page-hero-cta">
+          <a href="/" class="btn btn-charcoal">Back to Home</a>
+          <a href="/services" class="btn btn-outline">Explore Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 1: POPULAR DESTINATIONS ==================== -->
+    <section class="content-section" id="popular-destinations">
+      <div class="section-header-block">
+        <span class="section-kicker">QUICK NAVIGATION</span>
+        <h2 class="section-title">Popular studio <span class="italic-serif">destinations.</span></h2>
+      </div>
+
+      <div class="service-groups-grid">
+        <div class="service-category-card">
+          <h3 style="font-family:var(--font-serif); font-size:26px; margin-bottom:8px;">Men's Barbering</h3>
+          <p class="p-normal" style="font-size:12.5px; line-height:1.5; margin-bottom:16px;">
+            Precision skin fades, taper fades, beard lineups, and traditional hot towel shaves.
+          </p>
+          <a href="/men" class="btn btn-outline" style="width:100%;">View Men's Cuts</a>
+        </div>
+
+        <div class="service-category-card">
+          <h3 style="font-family:var(--font-serif); font-size:26px; margin-bottom:8px;">Women's Styling</h3>
+          <p class="p-normal" style="font-size:12.5px; line-height:1.5; margin-bottom:16px;">
+            Designer haircuts, effortless blow-outs, ammonia-free hair colour, and bridal styling.
+          </p>
+          <a href="/women" class="btn btn-outline" style="width:100%;">View Women's Salon</a>
+        </div>
+
+        <div class="service-category-card">
+          <h3 style="font-family:var(--font-serif); font-size:26px; margin-bottom:8px;">Transparent Pricing</h3>
+          <p class="p-normal" style="font-size:12.5px; line-height:1.5; margin-bottom:16px;">
+            Full rate card in Indian Rupees with zero hidden extras or surprise fees.
+          </p>
+          <a href="/pricing" class="btn btn-outline" style="width:100%;">Inspect Rates</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 2: CONCIERGE HELP ==================== -->
+    <section class="content-section theme-dark" id="concierge-help">
+      <div class="section-header-block">
+        <span class="section-kicker">FRONT DESK</span>
+        <h2 class="section-title">Need direct <span class="italic-serif">assistance?</span></h2>
+        <p class="section-desc">Our team is available 10:00 AM to 9:00 PM daily at our Indiranagar studio.</p>
+      </div>
+
+      <div class="service-groups-grid">
+        <div class="service-category-card">
+          <span style="font-family:var(--font-sans); font-size:10px; font-weight:700; color:var(--color-gold); letter-spacing:0.12em; text-transform:uppercase;">DIRECT TELEPHONE</span>
+          <p class="contact-block-value" style="font-size:24px; margin: 12px 0;">
+            <a href="tel:+919876543210" style="color:var(--color-ivory);">+91 98765 43210</a>
+          </p>
+          <p style="font-size:12px; font-style:italic; color:#A5A5AA;">Immediate booking queries and walk-in status.</p>
+        </div>
+
+        <div class="service-category-card">
+          <span style="font-family:var(--font-sans); font-size:10px; font-weight:700; color:var(--color-gold); letter-spacing:0.12em; text-transform:uppercase;">EMAIL CONCIERGE</span>
+          <p class="contact-block-value" style="font-size:22px; margin: 12px 0;">
+            <a href="mailto:concierge@fadestudio.in" style="color:var(--color-ivory);">concierge@fadestudio.in</a>
+          </p>
+          <p style="font-size:12px; font-style:italic; color:#A5A5AA;">Wedding bookings and partnership requests.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 3: CALL TO ACTION ==================== -->
+    <section class="booking-cta-strip">
+      <div class="cta-left">
+        <span class="cta-kicker">INSTANT APPOINTMENT</span>
+        <h2 class="cta-heading">Ready to <span class="italic-serif">book?</span></h2>
+        <p class="cta-desc">Lock in your chair time in 60 seconds with our online system.</p>
+      </div>
+      <div>
+        <a href="/book" class="btn btn-gold">Book Now</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

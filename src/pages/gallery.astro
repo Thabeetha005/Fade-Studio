@@ -1,0 +1,212 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Studio Gallery — FADE STUDIO | Haircut, Beard & Bridal Portfolio"
+  description="Explore FADE STUDIO"
+  currentPage="gallery"
+  showPreloader={false}
+>
+  <main id="mainContent">
+
+    <!-- ==================== HERO ==================== -->
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <span class="page-kicker">VISUAL ARCHIVE</span>
+        <h1 class="page-hero-title">
+          The craft in <span class="italic-serif">every cut.</span>
+        </h1>
+        <p class="page-hero-desc">
+          A visual record of our studio chairs. Filter through our precision men's fades, effortless women's styling, and couture bridal looks. Tap any photo to inspect details in the lightbox.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 1: FILTERABLE GALLERY ==================== -->
+    <section class="gallery-section" id="gallery-portfolio">
+      <!-- Filter Bar -->
+      <div class="gallery-filter-bar" role="tablist" aria-label="Gallery category filters">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Looks</button>
+        <button class="filter-btn" data-filter="men" role="tab" aria-selected="false">Men's Fades & Shaves</button>
+        <button class="filter-btn" data-filter="women" role="tab" aria-selected="false">Women's Hair & Cut</button>
+        <button class="filter-btn" data-filter="bridal" role="tab" aria-selected="false">Bridal & Editorial</button>
+      </div>
+
+      <!-- Photo Grid -->
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Item 1: Men -->
+        <div class="gallery-item" data-category="men" tabindex="0">
+          <img loading="lazy" decoding="async" src="/assets/image-2.jpg" alt="Tailored modern haircut and clean lines">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Modern Taper & Skyline</h3>
+            <span class="gallery-cat">MEN · PRECISION CUT</span>
+          </div>
+        </div>
+
+        <!-- Item 2: Men -->
+        <div class="gallery-item" data-category="men" tabindex="0">
+          <img loading="lazy" decoding="async" src="/assets/men-1.jpg" alt="Precision skin fade finish">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Zero Skin Fade</h3>
+            <span class="gallery-cat">MEN · BARBER DISCIPLINE</span>
+          </div>
+        </div>
+
+        <!-- Item 3: Women -->
+        <div class="gallery-item" data-category="women" tabindex="0">
+          <img loading="lazy" decoding="async" src="/assets/image-3.jpg" alt="Voluminous curly hair and warm knit styling">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Natural Curls & Warm Honey</h3>
+            <span class="gallery-cat">WOMEN · TEXTURE & CUT</span>
+          </div>
+        </div>
+
+        <!-- Item 4: Women -->
+        <div class="gallery-item" data-category="women" tabindex="0">
+          <img loading="lazy" decoding="async" src="/assets/image-4.jpg" alt="Sculptural women's haircut with sunglasses">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Architectural Bob</h3>
+            <span class="gallery-cat">WOMEN · COUTURE STYLING</span>
+          </div>
+        </div>
+
+        <!-- Item 5: Men -->
+        <div class="gallery-item" data-category="men" tabindex="0">
+          <img loading="lazy" decoding="async" src="/assets/men-3.jpg" alt="Beard trim and lineup detail">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Beard Sculpt & Contours</h3>
+            <span class="gallery-cat">MEN · BEARD ARCHITECTURE</span>
+          </div>
+        </div>
+
+        <!-- Item 6: Women -->
+        <div class="gallery-item" data-category="women" tabindex="0">
+          <img loading="lazy" decoding="async" src="/assets/image-6.jpg" alt="Effortless women's tailored layers">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Classic Long Layers</h3>
+            <span class="gallery-cat">WOMEN · BLOW-DRY FINISH</span>
+          </div>
+        </div>
+
+        <!-- Item 7: Bridal -->
+        <div class="gallery-item" data-category="bridal" tabindex="0">
+          <img loading="lazy" decoding="async" src="/assets/image-7.jpg" alt="Satin gown and timeless bridal hair">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Serene Bridal Silhouette</h3>
+            <span class="gallery-cat">BRIDAL · COUTURE HAIR & MAKEUP</span>
+          </div>
+        </div>
+
+        <!-- Item 8: Men -->
+        <div class="gallery-item" data-category="men" tabindex="0">
+          <img loading="lazy" decoding="async" src="/assets/men-5.jpg" alt="Hot towel shave and relaxation">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Hot Towel Shave Ritual</h3>
+            <span class="gallery-cat">MEN · STRAIGHT RAZOR</span>
+          </div>
+        </div>
+
+        <!-- Item 9: Bridal -->
+        <div class="gallery-item" data-category="bridal" tabindex="0">
+          <img loading="lazy" decoding="async" src="/assets/image-9.jpg" alt="Soft bridal consultation glow">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Pre-Event Radiance</h3>
+            <span class="gallery-cat">BRIDAL · SKIN MINIMALISM</span>
+          </div>
+        </div>
+
+        <!-- Item 10: Women -->
+        <div class="gallery-item" data-category="women" tabindex="0">
+          <img loading="lazy" decoding="async" src="/assets/image-14.jpg" alt="Dewy glowing skin portrait">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Dewy Skin Minimalism</h3>
+            <span class="gallery-cat">WOMEN · FACIAL INFUSION</span>
+          </div>
+        </div>
+
+        <!-- Item 11: Women -->
+        <div class="gallery-item" data-category="women" tabindex="0">
+          <img loading="lazy" decoding="async" src="/assets/image-16.jpg" alt="Sharp geometric hair cut">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Geometric Bob & Waves</h3>
+            <span class="gallery-cat">WOMEN · PRECISION CUT</span>
+          </div>
+        </div>
+
+        <!-- Item 12: Bridal -->
+        <div class="gallery-item" data-category="bridal" tabindex="0">
+          <img loading="lazy" decoding="async" src="/assets/image-17.jpg" alt="Bridal elegance and natural light">
+          <div class="gallery-overlay">
+            <h3 class="gallery-title">Satin Bridal Drape</h3>
+            <span class="gallery-cat">BRIDAL · LUXURY APPOINTMENT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 2: STUDIO ENVIRONMENT ==================== -->
+    <section class="content-section theme-dark" id="studio-spaces">
+      <div class="section-header-block">
+        <span class="section-kicker">INTERIOR & ATMOSPHERE</span>
+        <h2 class="section-title">Designed for <span class="italic-serif">calm & focus.</span></h2>
+        <p class="section-desc">Handcrafted Belmont barber chairs, warm acoustic timber, and natural lighting calibrated for true hair tone evaluation.</p>
+      </div>
+
+      <div class="service-groups-grid">
+        <div class="service-category-card" style="padding:0; overflow:hidden;">
+          <img loading="lazy" decoding="async" src="/assets/image-11.jpg" alt="Twilight architectural calm" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+
+        <div class="service-category-card" style="padding:0; overflow:hidden;">
+          <img loading="lazy" decoding="async" src="/assets/image-12.jpg" alt="Clean architectural symmetry" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+
+        <div class="service-category-card" style="padding:0; overflow:hidden;">
+          <img loading="lazy" decoding="async" src="/assets/image-13.jpg" alt="Urban daylight ambience" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 3: THE TRANSFORMATION PROMISE ==================== -->
+    <section class="content-section" id="transformation-promise">
+      <div class="section-header-block">
+        <span class="section-kicker">QUALITY BENCHMARK</span>
+        <h2 class="section-title">Our standard of <span class="italic-serif">consistency.</span></h2>
+        <p class="section-desc">Every photograph in our gallery reflects actual client chair sessions — never synthetic over-filtered photos.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-num">01</span>
+          <h3 class="step-title">True Natural Light</h3>
+          <p class="step-desc">Our cutting stations feature 5000K daylight-balanced illumination so your haircut looks the same under natural sun as it does in our chair.</p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-num">02</span>
+          <h3 class="step-title">Sanitized Steel</h3>
+          <p class="step-desc">All straight-edge razors, guards, and shears undergo medical-grade ultrasonic cleansing and UV sterilization between every guest.</p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-num">03</span>
+          <h3 class="step-title">Wearability</h3>
+          <p class="step-desc">A great haircut must grow out gracefully. We cut with internal weight distribution so your hair maintains its shape 3 to 4 weeks later.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CALL TO ACTION STRIP ==================== -->
+    <section class="booking-cta-strip">
+      <div class="cta-left">
+        <span class="cta-kicker">INSPIRED BY A LOOK?</span>
+        <h2 class="cta-heading">Book your chair <span class="italic-serif">today.</span></h2>
+        <p class="cta-desc">Show your reference photo to your stylist during your initial consultation.</p>
+      </div>
+      <div>
+        <a href="/book" class="btn btn-gold">Book Appointment</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

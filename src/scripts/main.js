@@ -4,7 +4,7 @@
    Mobile-First & Touch-Optimized
    ========================================================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
+function initFadeStudio() {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isTouchOrMobile = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (window.innerWidth < 1024);
 
@@ -131,11 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const emailInput = form.querySelector('input[type="email"]');
       const emailVal = emailInput ? emailInput.value.trim() : '';
-      if (!emailVal) return;
+
+      const waUrl = window.FADE_WHATSAPP_URL || 'https://wa.me/91XXXXXXXXXX?text=Hi%20FADE%20STUDIO%2C%20I%20want%20to%20claim%20the%2015%25%20welcome%20offer.';
+      window.open(waUrl, '_blank');
 
       openFadeModal(
         'Welcome to <span class="italic-serif">FADE STUDIO</span>',
-        `Your 15% offer voucher has been dispatched to <strong>${emailVal}</strong>. Present your confirmation upon appointment checkout.`
+        `Your 15% offer voucher has been activated! We opened WhatsApp to connect you with our concierge${emailVal ? `, and sent a backup note to <strong>${emailVal}</strong>` : ''}. Present your chat confirmation upon appointment checkout.`
       );
       form.reset();
     });
@@ -635,4 +637,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
     }, 250);
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initFadeStudio);
+} else {
+  initFadeStudio();
+}

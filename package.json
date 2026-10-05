@@ -1,0 +1,18 @@
+{
+  "name": "fade-studio",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "FADE STUDIO — Unisex Grooming & Hair Studio",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^7.3.5"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.12.0"
+  }
+}
