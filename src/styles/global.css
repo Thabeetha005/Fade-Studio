@@ -2719,15 +2719,41 @@ input[type="date"].form-input {
   }
 
   .featured-cards-track-container {
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: none;
     padding-left: 48px;
-    padding-right: 0;
+    padding-right: 48px;
+    padding-bottom: 20px;
     margin: 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-gold) rgba(18, 18, 20, 0.08);
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    user-select: none;
+  }
+
+  .featured-cards-track-container:active {
+    cursor: grabbing;
+  }
+
+  .featured-cards-track-container::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  .featured-cards-track-container::-webkit-scrollbar-track {
+    background: rgba(18, 18, 20, 0.06);
+    border-radius: 3px;
+  }
+
+  .featured-cards-track-container::-webkit-scrollbar-thumb {
+    background: var(--color-gold);
+    border-radius: 3px;
   }
 
   .featured-cards-track {
     gap: 32px;
+    padding-right: 48px;
   }
 
   .featured-card {

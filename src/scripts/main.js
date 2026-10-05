@@ -551,42 +551,102 @@ function initFadeStudio() {
       });
     }
 
-    // 3. Pinned Horizontal Scroll (Home Featured Cards) — DESKTOP ONLY (>=1024px)
+    // 3. Featured Services Horizontal Scroll (Cursor-on-top interactive scroll, no mandatory page pinning)
     const featuredSection = document.getElementById('featured');
     const cardsTrack = document.getElementById('featuredCardsTrack');
     const cardsContainer = document.getElementById('featuredCardsContainer');
 
     if (featuredSection && cardsTrack && cardsContainer) {
-      const mm = gsap.matchMedia();
+      // Clear any lingering GSAP transform props so natural horizontal scroll works cleanly
+      gsap.set(cardsTrack, { clearProps: 'all' });
 
-      mm.add('(min-width: 1024px)', () => {
-        const calculateScroll = () => {
-          const trackWidth = cardsTrack.scrollWidth;
-          const containerWidth = cardsContainer.clientWidth;
-          return Math.max(0, trackWidth - containerWidth + 60);
-        };
+      let targetScrollLeft = cardsContainer.scrollLeft;
+      let isRafScrolling = false;
 
-        const xDist = calculateScroll();
-        if (xDist > 0) {
-          gsap.to(cardsTrack, {
-            x: () => -calculateScroll(),
-            ease: 'none',
-            scrollTrigger: {
-              trigger: featuredSection,
-              pin: true,
-              start: 'top top',
-              end: () => `+=${calculateScroll() + 350}`,
-              scrub: 1,
-              invalidateOnRefresh: true,
-            }
-          });
+      // Sync target when container is scrolled natively (e.g. touch or trackpad)
+      cardsContainer.addEventListener('scroll', () => {
+        if (!isRafScrolling) {
+          targetScrollLeft = cardsContainer.scrollLeft;
         }
+      }, { passive: true });
 
-        return () => {
-          // Revert when below 1024px: clear transform props so CSS scroll-snap works
-          gsap.set(cardsTrack, { clearProps: 'all' });
-        };
+      const smoothScrollStep = () => {
+        const diff = targetScrollLeft - cardsContainer.scrollLeft;
+        if (Math.abs(diff) > 0.5) {
+          cardsContainer.scrollLeft += diff * 0.2;
+          requestAnimationFrame(smoothScrollStep);
+        } else {
+          cardsContainer.scrollLeft = targetScrollLeft;
+          isRafScrolling = false;
+        }
+      };
+
+      // Only scroll horizontally when the mouse cursor is directly ON TOP of the cards container
+      cardsContainer.addEventListener('wheel', (e) => {
+        // If primarily vertical wheel movement
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+          const maxScroll = cardsContainer.scrollWidth - cardsContainer.clientWidth;
+          if (maxScroll <= 0) return;
+
+          const isScrollingRight = e.deltaY > 0;
+          const isScrollingLeft = e.deltaY < 0;
+
+          const canScrollRight = cardsContainer.scrollLeft < maxScroll - 1;
+          const canScrollLeft = cardsContainer.scrollLeft > 1;
+
+          // Only intercept and scroll horizontally when there is remaining scrollable distance in this direction
+          if ((isScrollingRight && canScrollRight) || (isScrollingLeft && canScrollLeft)) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            targetScrollLeft = Math.max(0, Math.min(maxScroll, targetScrollLeft + e.deltaY * 1.15));
+
+            if (!isRafScrolling) {
+              isRafScrolling = true;
+              requestAnimationFrame(smoothScrollStep);
+            }
+          }
+          // If at the boundary (all cards viewed, or back at start), the event bubbles normally
+          // to window/Lenis, allowing vertical page scrolling without trapping the user!
+        }
+      }, { passive: false });
+
+      // Mouse drag-to-scroll for desktop
+      let isDown = false;
+      let startX = 0;
+      let startScroll = 0;
+      let draggedDistance = 0;
+
+      cardsContainer.addEventListener('mousedown', (e) => {
+        if (e.button !== 0) return;
+        isDown = true;
+        draggedDistance = 0;
+        startX = e.pageX - cardsContainer.offsetLeft;
+        startScroll = cardsContainer.scrollLeft;
+        targetScrollLeft = cardsContainer.scrollLeft;
       });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        const x = e.pageX - cardsContainer.offsetLeft;
+        const walk = (x - startX) * 1.3;
+        draggedDistance += Math.abs(walk);
+        cardsContainer.scrollLeft = startScroll - walk;
+        targetScrollLeft = cardsContainer.scrollLeft;
+      });
+
+      window.addEventListener('mouseup', () => {
+        isDown = false;
+      });
+
+      // Prevent card link clicks if the user was actively dragging
+      cardsContainer.addEventListener('click', (e) => {
+        if (draggedDistance > 8) {
+          e.preventDefault();
+          e.stopPropagation();
+          draggedDistance = 0;
+        }
+      }, true);
     }
 
     // 4. Moments columns
