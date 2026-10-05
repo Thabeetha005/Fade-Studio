@@ -41,13 +41,15 @@ img, video {
   --ease-editorial: cubic-bezier(0.25, 1, 0.5, 1);
   --page-padding: clamp(16px, 4vw, 64px);
   --section-spacing: clamp(64px, 8vw, 140px);
+  --header-height: 70px;
 }
 
 html {
   font-size: 16px;
   background-color: var(--color-ivory);
   color: var(--color-charcoal);
-  scroll-behavior: auto; /* Handled smoothly by Lenis on desktop */
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 24px);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -66,6 +68,10 @@ body {
   position: relative;
 }
 
+main {
+  padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0px));
+}
+
 body.drawer-open {
   overflow: hidden !important;
   touch-action: none !important;
@@ -76,18 +82,29 @@ body.drawer-open {
   outline-offset: 3px !important;
 }
 
-/* Lenis Recommended CSS */
-html.lenis, html.lenis body {
-  height: auto;
+/* Custom Luxury Editorial Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+
+::-webkit-scrollbar-track {
+  background: var(--color-ivory);
 }
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
+
+::-webkit-scrollbar-thumb {
+  background: #C5A880;
+  border-radius: 4px;
+  border: 2px solid var(--color-ivory);
 }
-.lenis.lenis-stopped {
-  overflow: hidden;
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-charcoal);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold) var(--color-ivory);
 }
 
 /* --- ACCESSIBILITY UTILITIES --- */
@@ -433,10 +450,10 @@ a:hover {
 }
 
 /* ==========================================================================
-   2. NAVBAR & HEADER (STICKY, MOBILE-FIRST, NOTCH-SAFE)
+   2. NAVBAR & HEADER (FIXED, MOBILE-FIRST, NOTCH-SAFE)
    ========================================================================== */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -2641,6 +2658,10 @@ input[type="date"].form-input {
    DESKTOP & UP (min-width: 1024px)
    -------------------------------------------------------------------------- */
 @media (min-width: 1024px) {
+  :root {
+    --header-height: 74px;
+  }
+
   /* Navbar Desktop Mode */
   .header-nav {
     display: flex;

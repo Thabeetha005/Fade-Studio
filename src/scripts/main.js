@@ -116,11 +116,7 @@ function initFadeStudio() {
     }, { passive: true });
 
     backToTopBtn.addEventListener('click', () => {
-      if (window.fadeLenis) {
-        window.fadeLenis.scrollTo(0, { duration: 1.2 });
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
@@ -400,25 +396,6 @@ function initFadeStudio() {
     gsap.registerPlugin(ScrollTrigger);
   }
 
-  // --- SMOOTH SCROLLING (DESKTOP ONLY) ---
-  // On touch/mobile devices, use native browser scrolling for responsive feel
-  if (typeof Lenis !== 'undefined' && !isTouchOrMobile) {
-    window.fadeLenis = new Lenis({
-      duration: 1.15,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      touchMultiplier: 1.0,
-      smoothTouch: false,
-    });
-
-    window.fadeLenis.on('scroll', ScrollTrigger.update);
-
-    gsap.ticker.add((time) => {
-      window.fadeLenis.raf(time * 1000);
-    });
-
-    gsap.ticker.lagSmoothing(0);
-  }
 
   // --- PRELOADER (HOME PAGE) ---
   const preloader = document.getElementById('preloader');
