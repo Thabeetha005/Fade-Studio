@@ -1674,7 +1674,9 @@ a:hover {
 }
 
 .section-header-block {
-  max-width: 800px;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 40px;
 }
 
@@ -1705,6 +1707,9 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .service-category-card {
@@ -2763,10 +2768,23 @@ input[type="date"].form-input {
     grid-template-columns: 1fr;
   }
 
-  /* Services catalog 3 columns */
+  /* Service Groups Grid (Centered 2 columns for 2-card sections, 3 columns for 3-card sections) */
   .service-groups-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: clamp(24px, 3vw, 40px);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+
+  .service-groups-grid:has(> :nth-child(2):last-child),
+  .services-catalog-section .service-groups-grid {
+    grid-template-columns: repeat(2, minmax(0, 560px));
+    justify-content: center;
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .gallery-grid {
