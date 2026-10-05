@@ -430,14 +430,23 @@ function initFadeStudio() {
     // Mark as loaded for the session
     sessionStorage.setItem('fade_preloader_seen', 'true');
 
-    // Fast-track preloader duration on mobile (<= 2.2s total)
+    // Crisp preloader count duration (0.7s on mobile, 0.9s on desktop)
     const isSmallScreen = window.innerWidth < 768;
-    const countDuration = isSmallScreen ? 1.0 : 1.5;
+    const countDuration = isSmallScreen ? 0.7 : 0.9;
+
+    // Safety fallback: guaranteed dismissal after 1.8s so user never gets stuck
+    const fallbackTimer = setTimeout(() => {
+      if (preloader && preloader.style.display !== 'none') {
+        preloader.style.display = 'none';
+        initGuardedScrollAnimations();
+        if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+      }
+    }, 1800);
 
     gsap.to(preloaderPanel, {
       opacity: 1,
       scale: 1,
-      duration: 0.5,
+      duration: 0.35,
       ease: 'power2.out',
     });
 
@@ -454,6 +463,7 @@ function initFadeStudio() {
         }
       },
       onComplete: () => {
+        clearTimeout(fallbackTimer);
         if (preloaderProgressLine) {
           preloaderProgressLine.style.width = '100%';
         }
@@ -465,17 +475,11 @@ function initFadeStudio() {
         });
 
         revealTl
-          .to(preloaderPanel, {
-            width: '100vw',
-            height: '100dvh',
-            duration: 0.5,
-            ease: 'expo.inOut',
-          })
           .to(preloader, {
             yPercent: -100,
-            duration: 0.65,
+            duration: 0.55,
             ease: 'power3.inOut',
-          }, '+=0.05')
+          })
           .from('.hero-main-title .reveal-inner', {
             yPercent: 120,
             opacity: 0,
