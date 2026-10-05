@@ -3,26 +3,23 @@
 
 <!-- ==================== PRELOADER ==================== -->
 <aside id="preloader" class="preloader" aria-label="Loading FADE STUDIO" role="dialog" aria-modal="true">
-  <div class="preloader-bg-image" style="background-image: url('/assets/hero-portrait.png');" aria-hidden="true"></div>
-  <div class="preloader-overlay" aria-hidden="true"></div>
-
-  <div class="preloader-panel" id="preloaderPanel">
-    <div class="preloader-panel-top">
-      <div class="preloader-thumbnail-frame">
-        <img src="/assets/hero-portrait.png" alt="FADE STUDIO signature cut preview" class="preloader-thumb">
-      </div>
-      <span class="preloader-issue-tag">EST. 2024 · BENGALURU</span>
-    </div>
-
-    <div class="preloader-panel-bottom">
-      <div class="preloader-brand">
-        <div class="brand-logo" style="font-size: 32px;">
-          <span class="logo-fade">FADE</span>
-          <span class="logo-studio">STUDIO</span>
+  <div class="loader-container">
+    <div class="loader-image-frame">
+      <img
+        src="/assets/hero-portrait.png"
+        alt="FADE STUDIO Loading"
+        class="loader-image"
+      />
+      
+      <!-- Progress bar placed over/inside the loader image area -->
+      <div class="loader-progress-overlay">
+        <div class="loader-progress-track">
+          <div class="loader-progress-bar" id="preloaderProgressBar"></div>
+          <div class="loader-percentage-pin" id="preloaderCounterPin">
+            <span class="loader-percentage-val" id="preloaderCounter">0%</span>
+          </div>
         </div>
-        <span class="brand-sub">CUT CLEAN. LOOK SHARP.</span>
       </div>
-      <div class="preloader-counter" id="preloaderCounter" aria-live="polite">0%</div>
     </div>
   </div>
 </aside>

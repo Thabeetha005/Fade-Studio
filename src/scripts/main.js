@@ -422,20 +422,13 @@ function initFadeStudio() {
 
   // --- PRELOADER (HOME PAGE) ---
   const preloader = document.getElementById('preloader');
-  const preloaderPanel = document.getElementById('preloaderPanel');
-  const preloaderCounter = document.getElementById('preloaderCounter');
+  const progressBar = document.getElementById('preloaderProgressBar');
+  const counterPin = document.getElementById('preloaderCounterPin');
+  const counterVal = document.getElementById('preloaderCounter');
 
-  if (preloader && preloaderPanel && preloaderCounter) {
-    // Fast-track preloader duration on mobile (<= 2.2s total)
-    const isSmallScreen = window.innerWidth < 768;
-    const countDuration = isSmallScreen ? 1.0 : 1.5;
-
-    gsap.to(preloaderPanel, {
-      opacity: 1,
-      scale: 1,
-      duration: 0.5,
-      ease: 'power2.out',
-    });
+  if (preloader && counterVal) {
+    // Smooth 2-3 second animation as requested
+    const countDuration = 2.4;
 
     const counterObj = { val: 0 };
     gsap.to(counterObj, {
@@ -443,7 +436,15 @@ function initFadeStudio() {
       duration: countDuration,
       ease: 'power2.inOut',
       onUpdate: () => {
-        preloaderCounter.textContent = `${Math.round(counterObj.val)}%`;
+        const rounded = Math.round(counterObj.val);
+        counterVal.textContent = `${rounded}%`;
+        if (progressBar) {
+          progressBar.style.width = `${counterObj.val}%`;
+        }
+        if (counterPin) {
+          counterPin.style.left = `${counterObj.val}%`;
+          counterPin.style.setProperty('--progress-pct', `${counterObj.val}%`);
+        }
       },
       onComplete: () => {
         const revealTl = gsap.timeline({
@@ -453,25 +454,20 @@ function initFadeStudio() {
           }
         });
 
+        // At 100%, fade out the loader and show the main page
         revealTl
-          .to(preloaderPanel, {
-            width: '100vw',
-            height: '100dvh',
-            duration: 0.5,
-            ease: 'expo.inOut',
-          })
           .to(preloader, {
-            yPercent: -100,
-            duration: 0.65,
-            ease: 'power3.inOut',
-          }, '+=0.05')
+            opacity: 0,
+            duration: 0.5,
+            ease: 'power2.inOut',
+          })
           .from('.hero-main-title .reveal-inner', {
             yPercent: 120,
             opacity: 0,
             duration: 0.7,
             stagger: 0.1,
             ease: 'power3.out',
-          }, '-=0.35')
+          }, '-=0.25')
           .from('.hero-left-column', {
             opacity: 0,
             duration: 0.6,
