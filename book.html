@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Book an Appointment — FADE STUDIO | Online Chair Reservation</title>
+  <meta name="description" content="Reserve your haircut, beard trim, hair spa, or bridal styling appointment online at FADE STUDIO. Real-time stylist and time slot selection.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="FADE STUDIO Homepage">
+        <span class="logo-fade">FADE</span>
+        <span class="logo-studio">STUDIO</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main Navigation">
+        <ul class="header-nav-list">
+          <li><a href="services.html">Services</a></li>
+          <li><a href="men.html">Men</a></li>
+          <li><a href="women.html">Women</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="offers.html" class="sign-in-link" style="font-family: var(--font-sans); font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--color-gold);">Offers</a>
+        <a href="book.html" class="btn btn-charcoal active" style="background-color:var(--color-gold); color:var(--color-charcoal-dark);">Book Now</a>
+      </div>
+
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Backdrop -->
+    
+  </header>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+      <div class="mobile-drawer-header">
+        <span class="drawer-logo-text"><span class="logo-fade">FADE</span> STUDIO</span>
+        <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close Navigation Menu">&times;</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="men.html">Men's Grooming</a></li>
+        <li><a href="women.html">Women's Styling</a></li>
+        <li><a href="pricing.html">Pricing Table</a></li>
+        <li><a href="gallery.html">Studio Gallery</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="offers.html">Special Offers</a></li>
+        <li><a href="contact.html">Contact & Hours</a></li>
+      </ul>
+      <div class="mobile-drawer-bottom">
+        <a href="book.html" class="btn btn-charcoal" style="width:100%;">Book an Appointment</a>
+      </div>
+    </div>
+
+  <main id="mainContent">
+    <!-- ==================== HERO ==================== -->
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <span class="page-kicker">RESERVATION DESK</span>
+        <h1 class="page-hero-title">
+          Reserve your <span class="italic-serif">chair.</span>
+        </h1>
+        <p class="page-hero-desc">
+          Select your desired service, choose your preferred stylist, and pick an hour that suits your schedule. We confirm appointments instantly via SMS and email.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 1: BOOKING FORM ==================== -->
+    <section class="content-section" id="booking-section">
+      <div class="contact-layout">
+
+        <!-- Form Card -->
+        <div class="form-card">
+          <form id="bookingForm" novalidate>
+            <div class="form-grid">
+              <!-- Name -->
+              <div class="form-group">
+                <label for="bookName" class="form-label">Full Name *</label>
+                <input type="text" id="bookName" class="form-input" placeholder="e.g. Rahul Verma" required>
+              </div>
+
+              <!-- Phone -->
+              <div class="form-group">
+                <label for="bookPhone" class="form-label">Phone Number *</label>
+                <input type="tel" id="bookPhone" class="form-input" placeholder="+91 98765 43210" required>
+              </div>
+
+              <!-- Service Select -->
+              <div class="form-group">
+                <label for="bookService" class="form-label">Select Service *</label>
+                <select id="bookService" class="form-select" required>
+                  <option value="" disabled selected>Choose a service...</option>
+                  <optgroup label="Men's Hair & Fades">
+                    <option value="Classic Haircut (₹300)">Classic Haircut — ₹300</option>
+                    <option value="Skin Fade / Taper Fade (₹400)">Skin Fade / Taper Fade — ₹400</option>
+                    <option value="Haircut + Beard (₹550)">Haircut + Beard — ₹550</option>
+                    <option value="Kids Cut (₹250)">Kids Cut — ₹250</option>
+                    <option value="Hair Wash & Style (₹200)">Hair Wash & Style — ₹200</option>
+                  </optgroup>
+                  <optgroup label="Beard & Shave">
+                    <option value="Beard Trim & Shape (₹200)">Beard Trim & Shape — ₹200</option>
+                    <option value="Hot Towel Shave (₹350)">Hot Towel Shave — ₹350</option>
+                    <option value="Beard Colour (₹300)">Beard Colour — ₹300</option>
+                  </optgroup>
+                  <optgroup label="Colour & Scalp Treatments">
+                    <option value="Global Colour (₹1200)">Global Colour — ₹1200</option>
+                    <option value="Grey Cover (₹600)">Grey Cover — ₹600</option>
+                    <option value="Highlights (₹1500)">Highlights — ₹1500</option>
+                    <option value="Hair Spa (₹800)">Hair Spa — ₹800</option>
+                    <option value="Anti-Dandruff Treatment (₹1000)">Anti-Dandruff Treatment — ₹1000</option>
+                  </optgroup>
+                  <optgroup label="Skin & Face">
+                    <option value="Clean-Up (₹600)">Clean-Up — ₹600</option>
+                    <option value="Glow Facial (₹1200)">Glow Facial — ₹1200</option>
+                    <option value="De-Tan (₹700)">De-Tan — ₹700</option>
+                    <option value="Head Massage (₹300)">Head Massage — ₹300</option>
+                  </optgroup>
+                  <optgroup label="Women's Services">
+                    <option value="Women's Haircut (₹600)">Women's Haircut — ₹600</option>
+                    <option value="Blow-Dry (₹500)">Blow-Dry — ₹500</option>
+                    <option value="Women's Colour (₹2000)">Women's Colour — ₹2000</option>
+                    <option value="Women's Facial (₹1500)">Women's Facial — ₹1500</option>
+                    <option value="Bridal Makeup (from ₹8000)">Bridal Makeup — from ₹8000</option>
+                  </optgroup>
+                  <optgroup label="Packages">
+                    <option value="Groom Package (₹3500)">Groom Package (Cut, Beard, Facial, Spa) — ₹3500</option>
+                    <option value="First-Visit Special (15% Off)">First-Visit Special (15% Off)</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <!-- Stylist Select -->
+              <div class="form-group">
+                <label for="bookStylist" class="form-label">Preferred Stylist</label>
+                <select id="bookStylist" class="form-select">
+                  <option value="Any Available Artist">Any Available Master Artist</option>
+                  <option value="Vikram Malhotra (Founder)">Vikram Malhotra — Master Barber (12 yrs)</option>
+                  <option value="Arjun Nair (Senior Fade Specialist)">Arjun Nair — Senior Fade Specialist (8 yrs)</option>
+                  <option value="Priya Sharma (Creative Director)">Priya Sharma — Creative Director (10 yrs)</option>
+                  <option value="Kabir Mehta (Texture Specialist)">Kabir Mehta — Texture Specialist (6 yrs)</option>
+                </select>
+              </div>
+
+              <!-- Date -->
+              <div class="form-group">
+                <label for="bookDate" class="form-label">Preferred Date *</label>
+                <input type="date" id="bookDate" class="form-input" required>
+              </div>
+
+              <!-- Time Slot -->
+              <div class="form-group">
+                <label for="bookTime" class="form-label">Time Slot *</label>
+                <select id="bookTime" class="form-select" required>
+                  <option value="" disabled selected>Select an hour...</option>
+                  <option value="10:00 AM">10:00 AM &ndash; Morning First Seat</option>
+                  <option value="11:30 AM">11:30 AM</option>
+                  <option value="01:00 PM">01:00 PM &ndash; Midday</option>
+                  <option value="02:30 PM">02:30 PM</option>
+                  <option value="04:00 PM">04:00 PM &ndash; Afternoon</option>
+                  <option value="05:30 PM">05:30 PM</option>
+                  <option value="07:00 PM">07:00 PM &ndash; Evening</option>
+                  <option value="08:00 PM">08:00 PM &ndash; Final Seat</option>
+                </select>
+              </div>
+
+              <!-- Message / Notes -->
+              <div class="form-group col-span-2">
+                <label for="bookNotes" class="form-label">Styling Notes / Preferences (Optional)</label>
+                <textarea id="bookNotes" class="form-textarea" placeholder="Let us know about your current hair length, scalp concerns, or if you are preparing for a special wedding or event..."></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-charcoal" style="width: 100%;">
+              Confirm & Book Appointment
+            </button>
+            <p class="form-help" style="margin-top: 12px; text-align: center;">
+              Zero booking deposit required. Free cancellations up to 2 hours before your session.
+            </p>
+          </form>
+        </div>
+
+        <!-- Right Side: Booking Perks & Details -->
+        <div class="contact-details-box">
+          <div>
+            <span class="contact-block-title">STUDIO LOCATION</span>
+            <p class="contact-block-value" style="font-size:20px;">
+              14th Main Rd, Indiranagar, Bengaluru
+            </p>
+            <p style="font-size:12px; font-style:italic; color:#666; margin-top:4px;">
+              Dedicated valet parking available for all clients.
+            </p>
+          </div>
+
+          <div>
+            <span class="contact-block-title">NEED ASSISTANCE?</span>
+            <p class="contact-block-value">
+              <a href="tel:+919876543210" style="color:var(--color-charcoal);">+91 98765 43210</a>
+            </p>
+            <p style="font-size:12px; font-style:italic; color:#666; margin-top:4px;">
+              Direct line to our front desk concierge for same-day walk-in availability.
+            </p>
+          </div>
+
+          <div style="background:var(--color-ivory-light); border:1px solid var(--color-border); padding:24px;">
+            <span style="font-family:var(--font-sans); font-size:10.5px; font-weight:700; color:var(--color-gold); letter-spacing:0.12em; text-transform:uppercase;">EVERY CHAIR SESSION INCLUDES</span>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; margin-top:12px; font-size:12px; font-style:italic;">
+              <li>— Comprehensive anatomical consultation</li>
+              <li>— Clarifying botanical hair wash & rinse</li>
+              <li>— Complimentary pour-over coffee or cold brew</li>
+              <li>— Professional finish styling & product application</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 2: STUDIO ETIQUETTE ==================== -->
+    <section class="content-section theme-dark" id="etiquette">
+      <div class="section-header-block">
+        <span class="section-kicker">GUEST CONCIERGE</span>
+        <h2 class="section-title">Studio <span class="italic-serif">Etiquette.</span></h2>
+        <p class="section-desc">To preserve a peaceful, unhurried atmosphere for all guests, please keep the following guidelines in mind.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card" style="background-color: var(--color-charcoal-card); border-color: var(--color-border-dark);">
+          <span class="step-num">01</span>
+          <h3 class="step-title" style="color:var(--color-ivory);">Arrival Time</h3>
+          <p class="step-desc" style="color:#D5D2CB;">
+            Please arrive 5 to 10 minutes prior to your booking. Relax in our waiting lounge with our curated print archives and espresso bar.
+          </p>
+        </div>
+
+        <div class="step-card" style="background-color: var(--color-charcoal-card); border-color: var(--color-border-dark);">
+          <span class="step-num">02</span>
+          <h3 class="step-title" style="color:var(--color-ivory);">Rescheduling</h3>
+          <p class="step-desc" style="color:#D5D2CB;">
+            Plans change. If you must adjust your reservation, simply call or WhatsApp our front desk at least 2 hours in advance so another guest may claim the chair.
+          </p>
+        </div>
+
+        <div class="step-card" style="background-color: var(--color-charcoal-card); border-color: var(--color-border-dark);">
+          <span class="step-num">03</span>
+          <h3 class="step-title" style="color:var(--color-ivory);">Calm Environment</h3>
+          <p class="step-desc" style="color:#D5D2CB;">
+            We maintain an acoustic environment with soft ambient audio. We kindly ask guests to keep mobile calls brief and silent on speaker.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 3: FAQ ==================== -->
+    <section class="content-section" id="booking-faq">
+      <div class="section-header-block">
+        <span class="section-kicker">QUESTIONS ANSWERED</span>
+        <h2 class="section-title">Frequently asked <span class="italic-serif">questions.</span></h2>
+      </div>
+
+      <div class="service-groups-grid">
+        <div class="service-category-card">
+          <h3 style="font-family:var(--font-serif); font-size:24px; margin-bottom:8px;">Do you accept walk-in clients?</h3>
+          <p class="p-normal" style="font-size:12.5px; line-height:1.6;">
+            Yes, walk-ins are always welcomed based on stylist availability. However, weekends and evenings between 5:00 PM and 8:30 PM fill rapidly, so an online booking guarantees zero wait time.
+          </p>
+        </div>
+
+        <div class="service-category-card">
+          <h3 style="font-family:var(--font-serif); font-size:24px; margin-bottom:8px;">How long does a haircut session take?</h3>
+          <p class="p-normal" style="font-size:12.5px; line-height:1.6;">
+            A classic haircut takes roughly 40 minutes. Skin fades and beard combinations take 50 to 60 minutes, ensuring careful blade detailing and straight-razor finishes.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="footer-container">
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <span class="footer-col-header">SERVICES & MENU</span>
+          <ul class="footer-links-list">
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="men.html">Men's Grooming</a></li>
+            <li><a href="women.html">Women's Hair & Beauty</a></li>
+            <li><a href="pricing.html">Full Pricing Table</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-header">EXPLORE</span>
+          <ul class="footer-links-list">
+            <li><a href="gallery.html">Studio Gallery</a></li>
+            <li><a href="about.html">About & Team</a></li>
+            <li><a href="offers.html">Seasonal Offers</a></li>
+            <li><a href="book.html">Book Appointment</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-header">OPENING HOURS</span>
+          <ul class="footer-links-list">
+            <li style="color:#D5D2CB; font-size:12px;">Monday &ndash; Sunday</li>
+            <li style="color:var(--color-gold); font-size:14px; font-weight:700;">10:00 AM &ndash; 9:00 PM</li>
+            <li style="color:#8C8C92; font-size:11px; margin-top:8px;">Walk-ins welcome based on stylist availability. Prior booking recommended.</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <span class="footer-col-header">STUDIO LOCATION</span>
+          <p class="footer-about-text" style="color:#D5D2CB; margin-bottom:8px;">
+            14th Main Road, Indiranagar, 100 Feet Rd Junction, Bengaluru, Karnataka 560038
+          </p>
+          <p style="color:#D5D2CB; font-size:12px; font-style:normal;">
+            Phone: <a href="tel:+919876543210" style="color:var(--color-gold);">+91 98765 43210</a><br>
+            Email: <a href="mailto:concierge@fadestudio.in" style="color:var(--color-gold);">concierge@fadestudio.in</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-divider" aria-hidden="true"></div>
+
+      <div class="footer-secondary-row">
+        <ul class="footer-legal-list">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="book.html">Online Booking</a></li>
+        </ul>
+
+        <div class="footer-social-row">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <span style="color:var(--color-grey-mid);">/</span>
+          <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a>
+        </div>
+      </div>
+
+      <div class="footer-copyright-row">
+        <p class="footer-copyright-text">
+          &copy; FADE STUDIO. Cut clean. Look sharp. All rights reserved. Precision unisex salon specializing in master barbering and contemporary hair styling.
+        </p>
+      </div>
+
+      <div class="footer-giant-logo-wrap" aria-hidden="true">
+        <span class="footer-giant-logo">
+          <span class="logo-fade">FADE</span>
+          <span class="logo-studio">STUDIO</span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Universal Modal Popup (Triggered with summary on submit) -->
+  <div class="modal-backdrop" id="generalModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <span class="modal-kicker">APPOINTMENT STATUS</span>
+      <h3 class="modal-title" id="modalTitle">Booking <span class="italic-serif">Confirmed</span></h3>
+      <div class="modal-message" id="modalMessage">
+        <p>Thank you. Your appointment has been scheduled.</p>
+      </div>
+      <button class="btn btn-charcoal modal-close-btn" id="modalCloseBtn">Close</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
