@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { SALON_HOURS, PHONE_NUMBER, PHONE_CALL_URL, SALON_EMAIL } from '../config.js';
 ---
 
 <BaseLayout
@@ -43,8 +44,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div>
             <span class="contact-block-title">OPENING HOURS</span>
             <p class="contact-block-value" style="color:var(--color-gold);">
-              Monday &ndash; Sunday<br>
-              10:00 AM &ndash; 9:00 PM
+              {SALON_HOURS.days}<br>
+              {SALON_HOURS.time}
             </p>
             <p style="font-size:12px; font-style:italic; color:#666; margin-top:6px;">
               Open on all major public holidays. Prior booking advised for evening peak hours.
@@ -54,8 +55,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div>
             <span class="contact-block-title">DIRECT CHANNELS</span>
             <p class="contact-block-value" style="font-size:20px;">
-              Phone: <a href="tel:+919876543210" style="color:var(--color-charcoal);">+91 98765 43210</a><br>
-              Email: <a href="mailto:concierge@fadestudio.in" style="color:var(--color-charcoal);">concierge@fadestudio.in</a>
+              Phone: <a href={PHONE_CALL_URL} style="color:var(--color-charcoal);">{PHONE_NUMBER}</a><br>
+              Email: <a href={`mailto:${SALON_EMAIL}`} style="color:var(--color-charcoal);">{SALON_EMAIL}</a>
             </p>
           </div>
 

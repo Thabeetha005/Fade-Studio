@@ -7,9 +7,12 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURICo
 export const PHONE_NUMBER = '+91 98765 43210';
 export const PHONE_CALL_URL = 'tel:+919876543210';
 
-export const SALON_ADDRESS = '104 Lavelle Road, Shanthala Nagar, Bengaluru, Karnataka 560001';
+export const SALON_ADDRESS = '14th Main Road, Indiranagar, 100 Feet Rd Junction, Bengaluru, Karnataka 560038';
 export const SALON_HOURS = {
-  weekdays: 'Mon – Fri: 09:00 AM – 09:00 PM',
-  weekends: 'Sat – Sun: 08:30 AM – 09:30 PM'
+  days: 'Monday – Sunday',
+  time: '10:00 AM – 9:00 PM',
+  full: 'Monday – Sunday: 10:00 AM – 9:00 PM',
+  weekdays: 'Monday – Sunday: 10:00 AM – 9:00 PM',
+  weekends: 'Monday – Sunday: 10:00 AM – 9:00 PM'
 };
-export const SALON_EMAIL = 'appointments@fadestudio.in';
+export const SALON_EMAIL = 'concierge@fadestudio.in';
